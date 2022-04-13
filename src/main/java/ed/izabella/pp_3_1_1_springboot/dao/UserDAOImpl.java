@@ -9,11 +9,11 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class UserDAOHib implements UserDAO{
+public class UserDAOImpl implements UserDAO{
 
     private final EntityManager em;
 
-    public UserDAOHib(EntityManager em) {
+    public UserDAOImpl(EntityManager em) {
         this.em = em;
     }
 

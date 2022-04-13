@@ -11,36 +11,36 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserDAO userDaoHib;
+    private final UserDAO userDaoImpl;
 
     public UserServiceImpl(UserDAO userDaoHib) {
-        this.userDaoHib = userDaoHib;
+        this.userDaoImpl = userDaoHib;
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<User> index() {
-        return userDaoHib.index();
+        return userDaoImpl.index();
     }
 
     @Override
     @Transactional(readOnly = true)
     public User show(int id){
-        return userDaoHib.show(id);
+        return userDaoImpl.show(id);
     }
 
     @Override
     @Transactional
     public void save(User user) {
-        userDaoHib.save(user);
+        userDaoImpl.save(user);
     }
 
     @Override
     @Transactional
-    public void update(User updatedUser){ userDaoHib.update(updatedUser); }
+    public void update(User updatedUser){ userDaoImpl.update(updatedUser); }
 
     @Override
     @Transactional
     public void delete(int id) {
-        userDaoHib.delete(id);}
+        userDaoImpl.delete(id);}
 }
